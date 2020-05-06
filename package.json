@@ -10,17 +10,20 @@
     "gatsby-plugin-manifest": "^2.4.2",
     "gatsby-plugin-offline": "^3.2.1",
     "gatsby-plugin-react-helmet": "^3.3.1",
+    "gatsby-plugin-sass": "^2.3.1",
     "gatsby-plugin-sharp": "^2.6.1",
     "gatsby-source-filesystem": "^2.3.1",
     "gatsby-source-shopify": "^3.2.1",
     "gatsby-transformer-sharp": "^2.5.1",
+    "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "prettier": "2.0.5",
+    "tailwindcss": "^1.4.5"
   },
   "keywords": [
     "gatsby"
