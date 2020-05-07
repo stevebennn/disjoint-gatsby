@@ -1,19 +1,19 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import cardConfig from './card.config'
+import React from "react"
+import { motion } from "framer-motion"
+import cardConfig from "./card.config"
 
 const list = {
   visible: {
     opacity: 1,
     transition: {
-      when: 'beforeChildren',
+      when: "beforeChildren",
       staggerChildren: cardConfig.cardEnterStagger,
     },
   },
   hidden: {
     opacity: 0,
     transition: {
-      when: 'afterChildren',
+      when: "afterChildren",
     },
   },
 }
@@ -54,8 +54,8 @@ const Card = () => {
           </p>
           <motion.button
             type="button"
-            className="bg-gray-700 text-white font-sans py-2 px-8"
-            whileHover={{ scale: 1.1 }}
+            className="bg-gray-700 text-white font-sans py-2 px-8 sm:bg-gray-200"
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             click me

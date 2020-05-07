@@ -17,6 +17,7 @@
     "gatsby-source-filesystem": "^2.3.1",
     "gatsby-source-shopify": "^3.2.1",
     "gatsby-transformer-sharp": "^2.5.1",
+    "netlify-plugin-a11y": "0.0.9",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
