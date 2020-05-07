@@ -48,7 +48,7 @@ export default {
   textContainer: " px-6 py-4",
   title: "text-gray-900 font-bold text-xl mb-2",
   body: "text-gray-700 text-base mb-3",
-  cardEnterStagger: 0.5,
+  cardEnterStagger: 0.4,
   cardStart: { y: 100 },
   cardEnd: { y: 0 },
 }
