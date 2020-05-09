@@ -106,5 +106,43 @@ module.exports = {
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
       },
     },
+    {
+      resolve: 'gatsby-plugin-flexsearch',
+      options: {
+        type: 'ShopifyProduct',
+        fields: [
+          {
+            name: 'title',
+            indexed: true,
+            resolver: 'title',
+            attributes: {
+              encode: 'balance',
+              tokenize: 'strict',
+              threshold: 6,
+              depth: 3,
+            },
+            store: true,
+          },
+          // {
+          //   name: 'description',
+          //   indexed: true,
+          //   resolver: 'frontmatter.description',
+          //   attributes: {
+          //     encode: 'balance',
+          //     tokenize: 'strict',
+          //     threshold: 6,
+          //     depth: 3,
+          //   },
+          //   store: false,
+          // },
+          {
+            name: 'url',
+            indexed: false,
+            resolver: 'handle',
+            store: true,
+          },
+        ],
+      },
+    },
   ],
 }
