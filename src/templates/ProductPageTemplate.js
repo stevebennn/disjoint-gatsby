@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import ProductDetail from '../components/Products/ProductDetail'
+import ProductDetail from 'components/products/productDetail'
 
 const ProductPageTemplate = ({ data }) => {
   return (
