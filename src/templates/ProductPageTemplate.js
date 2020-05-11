@@ -1,12 +1,15 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import ProductDetail from '../components/Products/ProductDetail'
+import ProductDetail from '../components/products/ProductDetail'
+import Layout from '../components/layout'
 
 const ProductPageTemplate = ({ data }) => {
   return (
-    <div>
-      <ProductDetail product={data.shopifyProduct} />
-    </div>
+    <Layout>
+      <div>
+        <ProductDetail product={data.shopifyProduct} />
+      </div>
+    </Layout>
   )
 }
 

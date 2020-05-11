@@ -106,5 +106,32 @@ module.exports = {
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
       },
     },
+    {
+      resolve: 'gatsby-plugin-flexsearch',
+      options: {
+        languages: ['en'],
+        type: 'ShopifyProduct',
+        fields: [
+          {
+            name: 'title',
+            indexed: true,
+            resolver: 'title',
+            attributes: {
+              encode: 'balance',
+              tokenize: 'strict',
+              threshold: 6,
+              depth: 3,
+            },
+            store: true,
+          },
+          {
+            name: 'url',
+            indexed: false,
+            resolver: 'handle',
+            store: true,
+          },
+        ],
+      },
+    },
   ],
 }

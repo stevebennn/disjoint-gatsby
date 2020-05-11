@@ -2,6 +2,8 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import Search from './modules/search/search'
+
 const Header = ({ siteTitle }) => (
   <header
     style={{
@@ -28,6 +30,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
     </div>
+    <Search />
   </header>
 )
 
