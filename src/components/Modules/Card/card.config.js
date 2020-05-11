@@ -44,10 +44,10 @@
 // https://tailwindcss.com/docs/max-height
 
 export default {
-  container: "sm:max-w-sm overflow-hidden shadow-lg mb-5 py-5 px-5 round",
-  textContainer: " px-6 py-4",
-  title: "text-gray-900 font-bold text-xl mb-2",
-  body: "text-gray-700 text-base mb-3",
+  container: 'sm:max-w-sm overflow-hidden shadow-lg mb-5 py-5 px-5 round',
+  textContainer: ' px-6 py-4',
+  title: 'text-gray-900 font-bold text-xl mb-2',
+  body: 'text-gray-700 text-base mb-3',
   cardEnterStagger: 0.4,
   cardStart: { y: 100 },
   cardEnd: { y: 0 },

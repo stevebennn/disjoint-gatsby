@@ -1,8 +1,31 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
+import { motion } from 'framer-motion'
+
+const list = {
+  visible: {
+    opacity: 1,
+    transition: {
+      when: 'beforeChildren',
+      staggerChildren: 0.4,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    transition: {
+      when: 'afterChildren',
+    },
+  },
+}
+
+const item = {
+  visible: { opacity: 1, x: 0 },
+  hidden: { opacity: 0, x: -100 },
+}
 
 // Search component
 class Search extends Component {
+  /* eslint-disable no-alert */
   state = {
     query: '',
     results: [],
@@ -12,11 +35,14 @@ class Search extends Component {
     const ResultList = () => {
       if (this.state.results.length > 0) {
         return this.state.results.map((page, i) => (
-          <div className="item-search" key={i}>
-            <Link to={`products/${page.url}`} className="link">
+          <motion.div
+            variants={item}
+            transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+          >
+            <Link to={`/products/${page.url}`} className="link">
               <h4>{page.title}</h4>
             </Link>
-          </div>
+          </motion.div>
         ))
       } else if (this.state.query.length > 2) {
         return 'No results for ' + this.state.query
@@ -38,9 +64,9 @@ class Search extends Component {
           onChange={this.search}
           placeholder={'Search'}
         />
-        <div className="search__list">
+        <motion.div initial="hidden" animate="visible" variants={list}>
           <ResultList />
-        </div>
+        </motion.div>
       </div>
     )
   }
