@@ -24,4 +24,28 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
       },
     })
   })
+
+  const collectionPages = await graphql(`
+    {
+      allShopifyCollection {
+        edges {
+          node {
+            shopifyId
+            handle
+          }
+        }
+      }
+    }
+  `)
+
+  collectionPages.data.allShopifyCollection.edges.forEach(edge => {
+    createPage({
+      path: `/collection/${edge.node.handle}`,
+      component: path.resolve('./src/templates/collections.js'),
+      context: {
+        id: edge.node.shopifyId,
+        handle: edge.node.handle,
+      },
+    })
+  })
 }
