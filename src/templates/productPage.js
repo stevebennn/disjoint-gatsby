@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import ProductDetail from '../components/products/ProductDetail'
 import Layout from '../components/layout'
 
-const ProductPageTemplate = ({ data }) => {
+const ProductPage = ({ data }) => {
   return (
     <Layout>
       <div>
@@ -24,4 +24,4 @@ export const query = graphql`
   }
 `
 
-export default ProductPageTemplate
+export default ProductPage
