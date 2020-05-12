@@ -3,9 +3,9 @@ import { Link } from 'gatsby'
 
 // Search component
 class Search extends Component {
-  constructor() {
-    super()
-    state = {
+  constructor(props) {
+    super(props)
+    this.state = {
       query: '',
       results: [],
     }
