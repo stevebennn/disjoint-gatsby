@@ -1,19 +1,19 @@
-import React from "react"
-import { motion } from "framer-motion"
-import cardConfig from "./card.config"
+import React from 'react'
+import { motion } from 'framer-motion'
+import cardConfig from './card.config'
 
 const list = {
   visible: {
     opacity: 1,
     transition: {
-      when: "beforeChildren",
+      when: 'beforeChildren',
       staggerChildren: cardConfig.cardEnterStagger,
     },
   },
   hidden: {
     opacity: 0,
     transition: {
-      when: "afterChildren",
+      when: 'afterChildren',
     },
   },
 }
@@ -29,7 +29,7 @@ const Card = () => {
       <motion.div
         className={cardConfig.container}
         variants={item}
-        transition={{ type: "spring", stiffness: 260, damping: 20 }}
+        transition={{ type: 'spring', stiffness: 260, damping: 20 }}
       >
         <div className={cardConfig.textContainer}>
           <div className={cardConfig.title}>The Coldest Sunset</div>
@@ -51,7 +51,7 @@ const Card = () => {
       <motion.div
         className={cardConfig.container}
         variants={item}
-        transition={{ type: "spring", stiffness: 260, damping: 20 }}
+        transition={{ type: 'spring', stiffness: 260, damping: 20 }}
       >
         <div className={cardConfig.textContainer}>
           <div className={cardConfig.title}>The Coldest Sunset</div>
