@@ -3,10 +3,12 @@ import { Link } from 'gatsby'
 
 // Search component
 class Search extends Component {
-  /* eslint-disable no-alert */
-  state = {
-    query: '',
-    results: [],
+  constructor() {
+    super()
+    state = {
+      query: '',
+      results: [],
+    }
   }
 
   render() {

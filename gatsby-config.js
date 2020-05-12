@@ -1,9 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-require('dotenv').config({
-  path: `.env`,
-})
-
-/* eslint-disable global-require */
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -88,7 +82,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        precachePages: [`/pages/*`],
+        precachePages: [`/pages/index.js`, `/templates/productPage.js`],
       },
     },
     {
@@ -109,6 +103,32 @@ module.exports = {
         // whitelist: ['whitelist'], // Don't remove this selector
         // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-flexsearch',
+      options: {
+        type: 'ShopifyProduct',
+        fields: [
+          {
+            name: 'title',
+            indexed: true,
+            resolver: 'title',
+            attributes: {
+              encode: 'balance',
+              tokenize: 'strict',
+              threshold: 6,
+              depth: 3,
+            },
+            store: true,
+          },
+          {
+            name: 'url',
+            indexed: false,
+            resolver: 'handle',
+            store: true,
+          },
+        ],
       },
     },
   ],
