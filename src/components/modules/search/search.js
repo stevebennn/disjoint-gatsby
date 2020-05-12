@@ -3,12 +3,9 @@ import { Link } from 'gatsby'
 
 // Search component
 class Search extends Component {
-  constructor() {
-    super()
-    state = {
-      query: '',
-      results: [],
-    }
+  state = {
+    query: '',
+    results: [],
   }
 
   render() {
