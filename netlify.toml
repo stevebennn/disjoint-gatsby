@@ -1,3 +1,0 @@
-[context.development.environment]
-  SHOPIFY_STORE_NAME = "gatsby-disjoint"
-  SHOPIFY_STORE_TOKEN = "81b7ee6c3faa82fbed5c5dcfa25228fd"
