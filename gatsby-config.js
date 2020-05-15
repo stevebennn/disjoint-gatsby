@@ -79,12 +79,12 @@ module.exports = {
         display: `standalone`,
       },
     },
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        precachePages: [`/pages/*`, `/templates/*`],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-offline`,
+    //   options: {
+    //     precachePages: [`/pages/*`, `/templates/*`],
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-sass`,
       options: {
