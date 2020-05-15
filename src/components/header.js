@@ -4,11 +4,7 @@ import React from 'react'
 
 import Navigation from './modules/navigation/navigation'
 
-const Header = ({ siteTitle }) => (
-  <header>
-    <Navigation />
-  </header>
-)
+const Header = ({ siteTitle }) => <header />
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
