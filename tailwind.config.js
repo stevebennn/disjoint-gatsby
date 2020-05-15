@@ -2,7 +2,7 @@ module.exports = {
   purge: [
     './src/components/**/*.js',
     './src/pages/**/*.js',
-    './src/styleguide/**/*.js',
+    './src/styleguide/*.js',
   ],
   target: 'relaxed',
   prefix: '',
