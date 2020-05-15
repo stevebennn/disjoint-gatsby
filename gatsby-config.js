@@ -90,7 +90,7 @@ module.exports = {
       options: {
         postCssPlugins: [
           require('tailwindcss'),
-          // require("./tailwind.config.js"), // Optional: Load custom Tailwind CSS configuration
+          require('./tailwind.config.js'), // Optional: Load custom Tailwind CSS configuration
         ],
       },
     },
@@ -116,9 +116,9 @@ module.exports = {
             resolver: 'title',
             attributes: {
               encode: 'balance',
-              tokenize: 'strict',
-              threshold: 6,
-              depth: 3,
+              tokenize: 'forward',
+              threshold: false,
+              depth: 0,
             },
             store: true,
           },
