@@ -97,7 +97,7 @@ module.exports = {
         tailwind: true, // Enable tailwindcss support
         // whitelist: ['whitelist'], // Don't remove this selector
         // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+        purgeOnly: ['./src/components/**/*.js', './src/styleguide/*.js'], // Purge only these files/folders
       },
     },
     {
