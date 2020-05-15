@@ -13,7 +13,7 @@ function Type() {
     <>
       {definedTypeSizes.map(item => {
         return (
-          <p key={item} className={`text-${item.name} p-3`}>
+          <p key={item.name} className={`text-${item.name} p-3`}>
             Lorem ipsum dolor sit amet.
           </p>
         )
