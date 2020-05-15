@@ -45,10 +45,11 @@
 
 export default {
   container: 'sm:max-w-sm overflow-hidden shadow-lg mb-5 py-5 px-5 round',
-  textContainer: ' px-6 py-4',
-  title: 'text-gray-900 font-bold text-xl mb-2',
+  textContainer: 'px-6 py-4',
+  title: 'text-gray-900 font-bold text-2xl mb-2 mb',
   body: 'text-gray-700 text-base mb-3',
-  cardEnterStagger: 0.4,
+  button: 'bg-gray-700 w-full text-white font-sans py-2 px-8',
+  cardEnterStagger: 0.5,
   cardStart: { y: 100 },
   cardEnd: { y: 0 },
 }

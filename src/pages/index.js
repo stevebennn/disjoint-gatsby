@@ -2,18 +2,19 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
-// import Image from '../components/image'
 import SEO from '../components/seo'
 import Card from '../components/modules/card/card'
-import Image from '../components/image'
+import ImageGallery from '../components/sections/imageGallery/imageGallery'
+import Hero from '../components/sections/hero/hero'
+// import Image from '../components/image'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+
+    {/* <Hero />
+    <ImageGallery /> */}
     <Card />
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
