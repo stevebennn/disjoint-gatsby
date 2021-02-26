@@ -1,3 +1,6 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -14,7 +17,7 @@ module.exports = {
         // If you are running your shop on a custom domain, you need to use that
         // as the shop name, without a trailing slash, for example:
         // shopName: "gatsby-shop.com",
-        shopName: 'gatsby-disjoint',
+        shopName: process.env.SHOPIFY_STORENAME,
 
         // An API access token to your Shopify shop. This is required.
         // You can generate an access token in the "Manage private apps" section
@@ -22,7 +25,7 @@ module.exports = {
         // to select "Allow this app to access your storefront data using the
         // Storefront API".
         // See: https://help.shopify.com/api/custom-storefronts/storefront-api/getting-started#authentication
-        accessToken: '81b7ee6c3faa82fbed5c5dcfa25228fd',
+        accessToken: process.env.SHOPIFY_STOREFRONT_TOKEN,
 
         // Set the API version you want to use. For a list of available API versions,
         // see: https://help.shopify.com/en/api/storefront-api/reference/queryroot

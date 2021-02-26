@@ -1,3 +1,10 @@
 {
-  "recommendations": ["esbenp.prettier-vscode"]
+  "recommendations": [
+      "formulahendry.auto-rename-tag",
+      "dsznajder.es7-react-js-snippets",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "bradlc.vscode-tailwindcss",
+      "nucllear.vscode-extension-auto-import"
+  ]
 }

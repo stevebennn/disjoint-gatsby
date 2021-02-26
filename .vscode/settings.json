@@ -1,0 +1,15 @@
+{
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+     },
+    "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "todo-tree.tree.showScanModeButton": false,
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+}
