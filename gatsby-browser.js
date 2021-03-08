@@ -1,7 +1,6 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import React from 'react'
+import ShopifyProvider from './src/context/ShopifyProvider'
 
-// You can delete this file if you're not using it
+export function wrapRootElement({ element }) {
+  return <ShopifyProvider>{element}</ShopifyProvider>
+}

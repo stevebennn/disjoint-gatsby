@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { motion } from 'framer-motion'
 import cardConfig from './card.config'
+import { ShopifyContext } from '../../../context/ShopifyProvider'
+import { Link } from 'gatsby'
 
 const list = {
   visible: {
@@ -23,54 +25,41 @@ const item = {
   hidden: { opacity: 0, ...cardConfig.cardStart },
 }
 
-const Card = () => {
+const Card = ({ node: { title, variants, description, handle } }) => {
+  const { addVariantToCart } = useContext(ShopifyContext)
+  // console.log(variants[0].shopifyId)
+
   return (
-    <motion.div initial="hidden" animate="visible" variants={list}>
-      <motion.div
-        className={cardConfig.container}
-        variants={item}
-        transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-      >
-        <div className={cardConfig.textContainer}>
-          <div className={cardConfig.title}>The Coldest Sunset</div>
-          <p className={cardConfig.body}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Voluptatibus quia, nulla! Maiores et perferendis eaque,
-            exercitationem praesentium nihil.
-          </p>
-          <motion.button
-            type="button"
-            className={cardConfig.button}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            click me
-          </motion.button>
-        </div>
-      </motion.div>
-      <motion.div
-        className={cardConfig.container}
-        variants={item}
-        transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-      >
-        <div className={cardConfig.textContainer}>
-          <div className={cardConfig.title}>The Coldest Sunset</div>
-          <p className={cardConfig.body}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Voluptatibus quia, nulla! Maiores et perferendis eaque,
-            exercitationem praesentium nihil.
-          </p>
-          <motion.button
-            type="button"
-            className={cardConfig.button}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            click me
-          </motion.button>
-        </div>
-      </motion.div>
+    <motion.div
+      className={cardConfig.container}
+      variants={item}
+      transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+    >
+      <div className={cardConfig.textContainer}>
+        <div className={cardConfig.title}>{title}</div>
+        <p className={cardConfig.body}>{description}</p>
+        <motion.button
+          type="button"
+          className={cardConfig.button}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          // onClick={() => addVariantToCart(variants[0].shopifyId, 1)}
+        >
+          <Link to={`/products/${handle}`}>Shop</Link>
+        </motion.button>
+      </div>
     </motion.div>
   )
 }
-export default Card
+
+const CardList = ({ edges }) => {
+  return (
+    <motion.div initial="hidden" animate="visible" variants={list}>
+      {edges.map(({ node }, index) => (
+        <Card key={`${node.title}-${index}`} node={node} />
+      ))}
+    </motion.div>
+  )
+}
+
+export default CardList
